@@ -15,8 +15,8 @@
     "check": "run-s check:*",
     "check:eslint": "eslint src",
     "check:prettier": "prettier --check src",
-    "test": "vitest",
-    "test:watch": "vitest --watch",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
     "prepack": "run-s clean build",
     "np": "np"
   },
