@@ -1,0 +1,4 @@
+.github
+.prettier*
+node_modules
+src
