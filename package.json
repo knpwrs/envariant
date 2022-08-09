@@ -1,7 +1,10 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
-  "name": "envariant",
+  "name": "@knpwrs/envariant",
   "version": "0.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "An Invariant for Environment Variables",
   "main": "dist/commonjs/index.js",
   "module": "dist/esnext/index.js",
