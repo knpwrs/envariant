@@ -24,8 +24,7 @@
     "check:eslint": "eslint src",
     "check:prettier": "prettier --check src",
     "check:ts": "tsc --noEmit",
-    "test": "vitest run",
-    "test:watch": "vitest watch",
+    "test": "vitest",
     "prepack": "run-s clean build",
     "np": "np"
   },
