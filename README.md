@@ -14,6 +14,10 @@ import env from '@knpwrs/envariant';
 const DB_URI = env('DB_URI');
 // DB_URI is guaranteed to be defined at this point, as long as there is a `DB_URI` environment variable defined.
 // If there isn't a `DB_URI` variable defined then `env` will throw and this script will crash.
+
+// There is an optional second parameter that lets you supply an object to read variables from; for
+// instance, the `env` parameter in Cloudflare workers:
+const ENDPOINT = env('ENDPOINT', env);
 ```
 
 ## Installation

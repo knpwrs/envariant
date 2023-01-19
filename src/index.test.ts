@@ -14,5 +14,13 @@ test('variable defined', () => {
 });
 
 test('variable not defined', () => {
-  expect(() => env(name)).toThrow(`${name} is not defined in process.env!`);
+  expect(() => env(name)).toThrow(`${name} is not defined in environment!`);
+});
+
+test('variable defined in provided bag', () => {
+  expect(env('foo', { foo: 'bar' })).toBe('bar');
+});
+
+test('variable not defined in provided bag', () => {
+  expect(() => env('foo', {})).toThrow('foo is not defined in environment!');
 });
