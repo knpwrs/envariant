@@ -1,4 +1,4 @@
-import { expect, test } from 'vitest';
+import { expect, expectTypeOf, test } from 'vitest';
 import env from './';
 
 test('exports', () => {
@@ -9,7 +9,9 @@ const name = 'FOO_BAR_BANANA_BAZ';
 
 test('variable defined', () => {
   process.env[name] = 'bears://apples';
-  expect(env(name)).toBe(process.env[name]);
+  const res = env(name);
+  expect(res).toBe(process.env[name]);
+  expectTypeOf(res).toBeString();
   delete process.env[name];
 });
 
@@ -18,7 +20,9 @@ test('variable not defined', () => {
 });
 
 test('variable defined in provided bag', () => {
-  expect(env('foo', { foo: 'bar' })).toBe('bar');
+  const res = env('foo', { foo: 'bar' });
+  expect(res).toBe('bar');
+  expectTypeOf(res).toBeString();
 });
 
 test('variable not defined in provided bag', () => {
