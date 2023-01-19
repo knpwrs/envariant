@@ -1,6 +1,7 @@
 export default function envariant(
   name: string,
-  bag: Record<string, string | undefined> = process.env,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  bag: any = process.env,
 ): string {
   const value = bag[name];
 
